@@ -300,6 +300,7 @@ namespace WHW8_2
             this._resetbtn.TabIndex = 3;
             this._resetbtn.Text = "取消重填";
             this._resetbtn.UseVisualStyleBackColor = true;
+            this._resetbtn.Click += new System.EventHandler(this._resetbtn_Click);
             // 
             // _TESTLlbl
             // 

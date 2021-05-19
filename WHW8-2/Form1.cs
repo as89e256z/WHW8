@@ -294,8 +294,7 @@ namespace WHW8_2
                 case 4:
                     _firInt = _CCMethod5[_comBoxnumber].MessagePath;
                     break;
-
-            }
+            }            
 
         }
 
@@ -333,6 +332,23 @@ namespace WHW8_2
         public DateTime datetimeYearStart, datetimeYearEnd;
         public int PathItem;
 
+        private void _resetbtn_Click(object sender, EventArgs e)
+        {
+            AnsMessage.Text = "";
+            foreach (var MessageItem in this._MessageMethod)
+            {
+                this.comboBox1.Items.Add(MessageItem.Name);
+            }
+            foreach (var MessageItem in this._CCMethod1)
+            {
+                this.comboBox2.Items.Add(MessageItem.Name);
+            }
+            splitContainer2.Visible = false;
+            this.ThisAYear.Checked = true;
+            this.comboBox1.SelectedItem = this.comboBox1.Items[0];
+            this.comboBox2.SelectedItem = this.comboBox2.Items[0];
+        }
+
         public void ThisAYear_CheckedChanged(object sender, EventArgs e)
         {
             SelcetYearsRange.Checked = false;
@@ -360,12 +376,12 @@ namespace WHW8_2
                 strYearstr = datetimeYearStart.ToString("yyyy/MM/dd");
                 strYearend = datetimeYearEnd.ToString("yyyy/MM/dd");
             }//算今年一整年並放入LABEL
-            else
+            else if (SelcetYearsRange.Checked == true)
             {
                 strYearstr = strtimeDatePicker.Value.ToString("d");
                 strYearend = endtimeDatePicker.Value.ToString("d");
                 datetimeYearStart = strtimeDatePicker.Value;
-                datetimeYearEnd = strtimeDatePicker.Value;
+                datetimeYearEnd = endtimeDatePicker.Value;
             }
 
             TimeSpan ts = datetimeYearEnd - datetimeYearStart;
