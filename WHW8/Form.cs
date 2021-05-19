@@ -366,6 +366,24 @@ namespace WHW8
 
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(863, 253);
+            this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.ResumeLayout(false);
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
 
         //private static void ConvertToDateTime(string value,DateTime valu)
         //{
